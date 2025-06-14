@@ -1,0 +1,363 @@
+<div class="footer">
+            어제 힐링한 선우가 오늘 다시 행복해지길 바라며...<br>
+            선우야 생일을 진심으로 축하해 ^.^
+        </div><!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여자친구 생일 일정표 💖</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f1f3f4 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '✨💝🌙⭐';
+            position: absolute;
+            top: -10px;
+            left: -50px;
+            font-size: 24px;
+            opacity: 0.4;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .header::after {
+            content: '🎂💫🌟💙';
+            position: absolute;
+            bottom: -10px;
+            right: -50px;
+            font-size: 24px;
+            opacity: 0.4;
+            animation: float 6s ease-in-out infinite reverse;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+        
+        .header h1 {
+            font-size: 2.2em;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+            letter-spacing: -0.5px;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.95;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+        
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0;
+        }
+        
+        .schedule-table th {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #495057;
+            padding: 20px 15px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1em;
+            border-bottom: 2px solid #dee2e6;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        .schedule-table td {
+            padding: 18px 15px;
+            border-bottom: 1px solid #f1f3f4;
+            vertical-align: top;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+        
+        .schedule-table tr:nth-child(even) {
+            background: #fafbfc;
+        }
+        
+        .schedule-table tr:nth-child(odd) {
+            background: #ffffff;
+        }
+        
+        .schedule-table tr:hover {
+            background: #f8f9fa;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        
+        .time-cell {
+            font-weight: 600;
+            color: #495057;
+            font-size: 0.95em;
+            min-width: 140px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin: 5px 0;
+            padding: 10px 12px !important;
+            text-align: center;
+            border: 1px solid #e9ecef;
+        }
+        
+        .content-cell {
+            font-weight: 500;
+            color: #212529;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+        
+        .location-cell {
+            color: #6c757d;
+            background: #f8f9fa;
+            border-radius: 6px;
+            padding: 10px 12px !important;
+            border-left: 3px solid #6f42c1;
+            line-height: 1.6;
+        }
+        
+        .transport-cell {
+            color: #495057;
+            background: #fff3cd;
+            border-radius: 6px;
+            padding: 10px 12px !important;
+            border-left: 3px solid #ffc107;
+            line-height: 1.6;
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            color: #6c757d;
+            font-size: 1.1em;
+            font-weight: 400;
+            border-top: 1px solid #dee2e6;
+            line-height: 1.6;
+        }
+        
+        .footer::before {
+            content: '💙 ';
+            font-size: 1.3em;
+        }
+        
+        .footer::after {
+            content: ' 💙';
+            font-size: 1.3em;
+        }
+        
+        .highlight-emoji {
+            font-size: 1.1em;
+            margin-right: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .schedule-table th,
+            .schedule-table td {
+                padding: 12px 8px;
+                font-size: 0.9em;
+            }
+            
+            .time-cell {
+                min-width: 120px;
+                font-size: 0.9em;
+            }
+        }
+        
+        .birthday-decoration {
+            position: fixed;
+            pointer-events: none;
+            z-index: 1000;
+            animation: sparkle 3s infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💙 선우의 특별한 생일 💙</h1>
+            <p>우리 선우를 위해 준비한 하루<br>
+            모든 순간이 선우에게 행복이 되길</p>
+        </div>
+        
+        <table class="schedule-table">
+            <thead>
+                <tr>
+                    <th>⏰ 시간</th>
+                    <th>📋 일정</th>
+                    <th>📍 장소</th>
+                    <th>🚇 이동 정보</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="time-cell">12:30 ~ 13:30</td>
+                    <td class="content-cell"><span class="highlight-emoji">💇‍♀️</span>미용실에서 예쁘게 준비<br><small style="color: #6c757d; font-weight: 400;">선우 만나기 위해서 미용실에서 예쁘게 준비하기</small></td>
+                    <td class="location-cell">일루헤어<br>(걸포북변역)</td>
+                    <td class="transport-cell"><span class="highlight-emoji">🚇</span>집 → 걸포북변역<br>(혼자 이동)</td>
+                </tr>
+                <tr>
+                    <td class="time-cell">13:30 ~ 14:30</td>
+                    <td class="content-cell"><span class="highlight-emoji">🚇</span>만남의 장소로 이동<br><small style="color: #6c757d; font-weight: 400;">어제 싸웠으니 얼른 만나서 풀어줘야지! 그것도 기분이 좋게 :)</small></td>
+                    <td class="location-cell">지하철 1호선</td>
+                    <td class="transport-cell">걸포북변역 → 숙대입구역<br>환승 포함 약 1시간</td>
+                </tr>
+                <tr>
+                    <td class="time-cell">14:30 ~ 14:50</td>
+                    <td class="content-cell"><span class="highlight-emoji">🌸</span>생일 꽃다발 준비<br><small style="color: #6c757d; font-weight: 400;">예쁜 선우를 위한 꽃을 준비하자!</small></td>
+                    <td class="location-cell">숙대입구역 근처<br>꽃집</td>
+                    <td class="transport-cell"><span class="highlight-emoji">🚶‍♂️</span>역에서 도보 3분</td>
+                </tr>
+                <tr>
+                    <td class="time-cell">15:00 ~ 15:10</td>
+                    <td class="content-cell"><span class="highlight-emoji">👫</span>드디어 만나는 시간<br><small style="color: #6c757d; font-weight: 400;">드디어 동욱's 스케줄 스타뚜!</small></td>
+                    <td class="location-cell">숙대입구역</td>
+                    <td class="transport-cell">꽃집 → 숙대입구역<br>도보 3분</td>
+                </tr>
+                <tr>
+                    <td class="time-cell">15:10 ~ 15:40</td>
+                    <td class="content-cell"><span class="highlight-emoji">☕</span>데이블러 카페에서<br>에그데이 + 아메리카노</td>
+                    <td class="location-cell">서울 용산구<br>한강대로 290-1 1층</td>
+                    <td class="transport-cell"><span class="highlight-emoji">🚇</span>숙대입구역 → 남영역<br>도보 5분</td>
+                </tr>
+                <tr>
+                    <td class="time-cell">15:40 ~ 16:20</td>
+                    <td class="content-cell"><span class="highlight-emoji">🎯</span>선우 특별미션 3개<br>+ 가챠 뽑기<br><small style="color: #6c757d; font-weight: 400;">선우를 위한 특별미션 3개! 두구두구~ 가챠 뽑기 쟈잔~</small></td>
+                    <td class="location-cell">서울 용산구<br>청파로47길 62<br>1층 102호</td>
+                    <td class="transport-cell"><span class="highlight-emoji">🚶‍♂️</span>카페에서 도보 8분</td>
+                </tr>
+                <tr>
+                    <td class="time-cell">16:20 ~ 17:00</td>
+                    <td class="content-cell"><span class="highlight-emoji">🚶‍♀️</span>효창운동장 &<br>숙명여대 산책<br><small style="color: #6c757d; font-weight: 400;">산책이지만 이것은 서누의 Pick으로 선택</small></td>
+                    <td class="location-cell">효창공원 일대</td>
+                    <td class="transport-cell"><span class="highlight-emoji">🚶‍♂️</span>도보로 여유롭게<br>10분 거리</td>
+                </tr>
+                <tr>
+                    <td class="time-cell">17:00 ~ 17:20</td>
+                    <td class="content-cell"><span class="highlight-emoji">🍰</span>생일 케이크 픽업<br><small style="color: #6c757d; font-weight: 400;">선우를 위한 우리의 생일 케이꾸~</small></td>
+                    <td class="location-cell">커스버트베이크 용산점<br>(서울 용산구<br>한강대로 279 1층)</td>
+                    <td class="transport-cell"><span class="highlight-emoji">🚶‍♂️</span>산책로에서 도보 5분</td>
+                </tr>
+                <tr>
+                    <td class="time-cell">17:20 ~ 18:00</td>
+                    <td class="content-cell"><span class="highlight-emoji">🛍️</span>롯데아울렛 서울역점<br>쇼핑 타임</td>
+                    <td class="location-cell">서울 중구<br>한강대로 405</td>
+                    <td class="transport-cell"><span class="highlight-emoji">🚇</span>효창공원역 → 서울역<br>(1정거장, 10분)</td>
+                </tr>
+                <tr>
+                    <td class="time-cell">18:00 ~ 18:30</td>
+                    <td class="content-cell"><span class="highlight-emoji">🛍️</span>신세계백화점 본점</td>
+                    <td class="location-cell">서울 중구<br>소공로 63</td>
+                    <td class="transport-cell">지하철 4호선<br>서울역 → 회현역<br>도보 포함 10분</td>
+                </tr>
+                <tr>
+                    <td class="time-cell">18:30 ~ 19:00</td>
+                    <td class="content-cell"><span class="highlight-emoji">🛍️</span>롯데백화점 본점</td>
+                    <td class="location-cell">서울 중구<br>남대문로 81</td>
+                    <td class="transport-cell">지하철 4호선<br>서울역 → 명동역<br>도보 포함 10분</td>
+                </tr>
+                <tr>
+                    <td class="time-cell">19:00 ~ 20:30</td>
+                    <td class="content-cell"><span class="highlight-emoji">🍽️</span>어슬에서 생일 디너<br><small style="color: #6c757d; font-weight: 400;">선우를 위한 내가 찾아본 맛난 저녁! (야경이 끝내준대)</small></td>
+                    <td class="location-cell">서울 중구<br>퇴계로 15 13층</td>
+                    <td class="transport-cell">백화점에서<br>도보 또는 택시</td>
+                </tr>
+                <tr>
+                    <td class="time-cell">20:30 ~ 22:00</td>
+                    <td class="content-cell"><span class="highlight-emoji">⛲</span>여유로운 시간<br>(산책 혹은 카페)<br><small style="color: #6c757d; font-weight: 400;">여유롭게 구경 (날씨가 좋길~^^)</small></td>
+                    <td class="location-cell">서울역 주변</td>
+                    <td class="transport-cell">자유롭게 걸으며<br>대화하는 시간</td>
+                </tr>
+                <tr>
+                    <td class="time-cell">22:00 ~ 23:00</td>
+                    <td class="content-cell"><span class="highlight-emoji">👋</span>아쉬운 작별 인사</td>
+                    <td class="location-cell">-</td>
+                    <td class="transport-cell">안전한 귀가<br>(지하철/택시)</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="footer">
+            특별한 하루가 되길 바라며... 생일 축하해요!
+        </div>
+    </div>
+
+    <script>
+        // 랜덤 생일 장식 효과
+        function createSparkle() {
+            const sparkles = ['✨', '💖', '🌟', '💫', '🎂', '🎉', '🌸', '💕'];
+            const sparkle = document.createElement('div');
+            sparkle.className = 'birthday-decoration';
+            sparkle.textContent = sparkles[Math.floor(Math.random() * sparkles.length)];
+            sparkle.style.left = Math.random() * window.innerWidth + 'px';
+            sparkle.style.top = Math.random() * window.innerHeight + 'px';
+            sparkle.style.fontSize = (Math.random() * 20 + 15) + 'px';
+            
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 3000);
+        }
+        
+        // 3초마다 스파클 효과 생성
+        setInterval(createSparkle, 3000);
+        
+        // 페이지 로드 시 초기 스파클들 생성
+        for (let i = 0; i < 5; i++) {
+            setTimeout(createSparkle, i * 500);
+        }
+    </script>
+</body>
+</html>
