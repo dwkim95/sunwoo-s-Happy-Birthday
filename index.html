@@ -5,6 +5,9 @@
             
         </div><!DOCTYPE html>
 <html lang="ko">
+
+<!DOCTYPE html>
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -168,6 +171,149 @@
             line-height: 1.6;
         }
         
+        .comments-section {
+            background: #ffffff;
+            padding: 40px 30px;
+            border-top: 1px solid #dee2e6;
+        }
+        
+        .comments-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .comments-header h2 {
+            color: #495057;
+            font-size: 1.8em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .comments-header p {
+            color: #6c757d;
+            font-size: 1.1em;
+        }
+        
+        .comment-form {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #495057;
+            font-size: 0.95em;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 0.95em;
+            transition: border-color 0.3s ease;
+            background: white;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+            line-height: 1.5;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+        
+        .comments-list {
+            max-height: 500px;
+            overflow-y: auto;
+        }
+        
+        .comment-item {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #e9ecef;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .comment-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-1px);
+        }
+        
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .comment-author {
+            font-weight: 600;
+            color: #495057;
+            font-size: 1em;
+        }
+        
+        .comment-date {
+            color: #6c757d;
+            font-size: 0.85em;
+        }
+        
+        .comment-content {
+            color: #212529;
+            line-height: 1.6;
+            font-size: 0.95em;
+        }
+        
+        .no-comments {
+            text-align: center;
+            color: #6c757d;
+            font-style: italic;
+            padding: 40px 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border: 2px dashed #dee2e6;
+        }
+        
         .footer {
             background: #f8f9fa;
             padding: 30px;
@@ -258,50 +404,31 @@
                 margin-right: 4px;
             }
             
+            .comments-section {
+                padding: 25px 20px;
+            }
+            
+            .comments-header h2 {
+                font-size: 1.5em;
+            }
+            
+            .comments-header p {
+                font-size: 1em;
+            }
+            
+            .comment-form {
+                padding: 20px;
+            }
+            
+            .comment-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            
             .footer {
                 padding: 20px 15px;
                 font-size: 0.95em;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .header h1 {
-                font-size: 1.4em;
-            }
-            
-            .header p {
-                font-size: 0.9em;
-            }
-            
-            .schedule-table th,
-            .schedule-table td {
-                padding: 10px 4px;
-                font-size: 0.8em;
-            }
-            
-            .time-cell {
-                min-width: 90px;
-                font-size: 0.75em;
-                padding: 6px 4px !important;
-            }
-            
-            .content-cell {
-                font-size: 0.8em;
-            }
-            
-            .content-cell small {
-                font-size: 0.7em;
-            }
-            
-            .location-cell,
-            .transport-cell {
-                font-size: 0.75em;
-                padding: 6px 4px !important;
-            }
-            
-            .footer {
-                padding: 15px 10px;
-                font-size: 0.9em;
             }
         }
         
@@ -417,12 +544,125 @@
             </tbody>
         </table>
         
+        <!-- 댓글 섹션 -->
+        <div class="comments-section">
+            <div class="comments-header">
+                <h2>💌 선우에게 축하 메시지 남기기</h2>
+                <p>선우의 특별한 날을 함께 축하해주세요!</p>
+            </div>
+            
+            <div class="comment-form">
+                <div class="form-group">
+                    <label for="commentName">이름</label>
+                    <input type="text" id="commentName" placeholder="이름을 입력해주세요">
+                </div>
+                <div class="form-group">
+                    <label for="commentMessage">축하 메시지</label>
+                    <textarea id="commentMessage" placeholder="선우에게 따뜻한 생일 축하 메시지를 남겨주세요 💙"></textarea>
+                </div>
+                <button class="submit-btn" onclick="addComment()">
+                    💝 메시지 남기기
+                </button>
+            </div>
+            
+            <div class="comments-list" id="commentsList">
+                <div class="no-comments" id="noComments">
+                    아직 댓글이 없습니다. 첫 번째 축하 메시지를 남겨보세요! 🎉
+                </div>
+            </div>
+        </div>
+        
         <div class="footer">
-            특별한 하루가 되길 바라며... 생일 축하해요!
+            어제 힐링한 선우가 오늘 다시 행복해지길 바라며...<br>
+            선우야 생일을 진심으로 축하해 ^.^<br>
+            2025.06.14 (토), 선우를 많이 사랑하고 아끼는 동욱오빠가~
         </div>
     </div>
 
     <script>
+        // 댓글 데이터를 저장할 배열 (메모리에 저장)
+        let comments = [];
+
+        // 댓글 추가 함수
+        function addComment() {
+            const nameInput = document.getElementById('commentName');
+            const messageInput = document.getElementById('commentMessage');
+            
+            const name = nameInput.value.trim();
+            const message = messageInput.value.trim();
+            
+            if (!name || !message) {
+                alert('이름과 메시지를 모두 입력해주세요!');
+                return;
+            }
+            
+            const comment = {
+                id: Date.now(),
+                name: name,
+                message: message,
+                date: new Date().toLocaleDateString('ko-KR', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                })
+            };
+            
+            comments.unshift(comment); // 최신 댓글을 맨 위에 추가
+            renderComments();
+            
+            // 입력 필드 초기화
+            nameInput.value = '';
+            messageInput.value = '';
+            
+            // 성공 메시지
+            showSuccessMessage();
+        }
+        
+        // 댓글 목록 렌더링 함수
+        function renderComments() {
+            const commentsList = document.getElementById('commentsList');
+            const noComments = document.getElementById('noComments');
+            
+            if (comments.length === 0) {
+                noComments.style.display = 'block';
+                return;
+            }
+            
+            noComments.style.display = 'none';
+            
+            commentsList.innerHTML = comments.map(comment => `
+                <div class="comment-item">
+                    <div class="comment-header">
+                        <div class="comment-author">💙 ${comment.name}</div>
+                        <div class="comment-date">${comment.date}</div>
+                    </div>
+                    <div class="comment-content">${comment.message}</div>
+                </div>
+            `).join('');
+        }
+        
+        // 성공 메시지 표시
+        function showSuccessMessage() {
+            const btn = document.querySelector('.submit-btn');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '✅ 메시지가 등록되었습니다!';
+            btn.style.background = '#28a745';
+            
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+            }, 2000);
+        }
+        
+        // 엔터 키로 댓글 등록
+        document.getElementById('commentMessage').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && e.ctrlKey) {
+                addComment();
+            }
+        });
+        
         // 랜덤 생일 장식 효과
         function createSparkle() {
             const sparkles = ['✨', '💖', '🌟', '💫', '🎂', '🎉', '🌸', '💕'];
@@ -447,6 +687,9 @@
         for (let i = 0; i < 5; i++) {
             setTimeout(createSparkle, i * 500);
         }
+        
+        // 초기 댓글 렌더링
+        renderComments();
     </script>
 </body>
 </html>
